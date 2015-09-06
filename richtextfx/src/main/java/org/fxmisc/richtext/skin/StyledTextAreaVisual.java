@@ -176,10 +176,10 @@ class StyledTextAreaView<S> extends Region {
         manageSubscription(() -> caretPulse.stop());
 
         // The caret is visible in periodic intervals, but only when
-        // the code area is focused, editable and not disabled.
+        // the code area is focused and not disabled.
         caretVisible = caretPulse
                 .and(area.focusedProperty())
-                .and(area.editableProperty())
+                //.and(area.editableProperty())
                 .and(area.disabledProperty().not());
         manageBinding(caretVisible);
 
